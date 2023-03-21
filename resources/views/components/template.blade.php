@@ -20,6 +20,14 @@
     <!-- Custom styles for this template-->
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
 
+    <!-- SweetAlerts -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.19/dist/sweetalert2.all.min.js"></script>
+
+    <!-- JQuery -->
+    <script src="{{ asset('jquery/jquery.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.js"></script>
+
+
 </head>
 
 <body id="page-top">
@@ -54,7 +62,7 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="{{ asset('jquery/jquery.min.js') }}"></script>
+
     <script src="{{ asset('bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
     <!-- Core plugin JavaScript-->

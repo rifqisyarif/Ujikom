@@ -23,7 +23,7 @@
                                         <img style="height: 200px" class="img-fluid"
                                             src="{{ asset('img/baca-quran.png') }}" alt="">
                                     </div>
-                                    <form method="POST" action="{{ route('login') }}">
+                                    <form id="form" method="POST" action="{{ route('login') }}">
                                         @csrf
                                         <div class="form-group">
                                             <label for="email" class="col-md-4 col-form-label">{{
@@ -44,19 +44,17 @@
                                                 __('Password')
                                                 }}</label>
 
-                                            <div class="">
-                                                <input id="password" type="password"
-                                                    class="form-control @error('password') is-invalid @enderror"
-                                                    name="password" required autocomplete="current-password">
+                                            <input id="password" type="password"
+                                                class="form-control @error('password') is-invalid @enderror"
+                                                name="password" required autocomplete="current-password">
 
-                                                @error('password')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                                @enderror
-                                            </div>
+                                            @error('password')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                            @enderror
                                         </div>
-                                        <button type="submit" class="btn btn-primary w-100">
+                                        <button type="submit" class="btn btn-primary w-100 show_confirm">
                                             {{ __('Login') }}
                                         </button>
                                     </form>
@@ -146,4 +144,54 @@
         </div>
     </div> --}}
 </div>
+<script>
+    $("#form").validate({
+    submitHandler: function(form) {
+        // this function will be called when the form is submitted and passes validation
+        // you can use it to submit the form via AJAX and display a success message to the user
+
+        // serialize the form data
+        var formData = $(form).serialize();
+        
+        // submit the form via AJAX
+        $.ajax({
+        url: "/submit-form",
+        type: "POST",
+        data: formData,
+        success: function(response) {
+            // handle the server response here
+            if (response.success) {
+                        Swal.fire({
+                            title: "Form submitted!",
+                            text: response.message,
+                            icon: "success",
+                            confirmButtonText: "OK"
+                        }).then(function() {
+                            form.submit(); // reset the form
+                        });
+                    } else {
+                        Swal.fire({
+                            title: "Error!",
+                            text: response.message,
+                            icon: "error",
+                            confirmButtonText: "OK"
+                        });
+                        console.log(response)
+                    }
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            // handle the AJAX error here
+            Swal.fire({
+            title: "Error!",
+            text: "Invalid Email or password !",
+            icon: "error",
+            confirmButtonText: "OK"
+            });
+            console.log(textStatus)
+        }
+        });
+    }
+});
+    
+</script>
 @endsection
