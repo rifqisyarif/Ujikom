@@ -8401,6 +8401,12 @@ button.bg-dark:focus {
   width: auto !important;
 }
 
+@media (max-width: 992px) {
+  #form-wrapper {
+    width: 75% !important;
+  }
+}
+
 .h-25 {
   height: 25% !important;
 }
@@ -12609,3 +12615,5 @@ footer.sticky-footer .copyright {
 body.sidebar-toggled footer.sticky-footer {
   width: 100%;
 }
+
+/* Custom */

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -36,5 +37,31 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    public function submitForm(Request $request)
+    {
+        // retrieve the form data
+        $email = $request->input('email');
+        $password = $request->input('password');
+
+        // validate the form data
+        if (empty($name) || empty($password)) {
+            // return an error response if the form data is invalid
+            return response()->json([
+                'success' => false,
+                'message' => 'Please fill out all form fields.'
+            ], 400);
+        }
+
+        // process the form data
+        // for example, you might save the data to a database or send an email
+        // ...
+
+        // return a success response if the form data is valid and has been processed successfully
+        return response()->json([
+            'success' => true,
+            'message' => 'Form submitted successfully!'
+        ], 200);
     }
 }

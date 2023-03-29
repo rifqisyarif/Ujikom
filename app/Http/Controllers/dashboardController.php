@@ -10,4 +10,16 @@ class dashboardController extends Controller
     {
         return view('admin.dashboard');
     }
+
+    public function createAsrama()
+    {
+        return view('admin.createAsrama', [
+            'dashboard' => 'admin.dashboard'
+        ]);
+    }
+
+    public function detailAsrama()
+    {
+        return view('admin.detailAsrama');
+    }
 }
