@@ -43,7 +43,7 @@
 *,
 ::after,
 ::before {
-    box-sizing: border-box
+    box-sizing: border-box;
 }
 
 html {
@@ -68,7 +68,7 @@ section {
 
 body {
     margin: 0;
-    font-family: Nunito, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: 'Raleway', sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
@@ -99,7 +99,7 @@ h6 {
 
 p {
     margin-top: 0;
-    margin-bottom: 1rem
+    margin-bottom: 0;
 }
 
 abbr[data-original-title],
@@ -585,6 +585,16 @@ pre code {
     padding-left: .75rem;
     margin-right: auto;
     margin-left: auto
+}
+
+.wrapper {
+    width: 50%;
+}
+
+@media (max-width:1000px) {
+    .wrapper {
+        width: 75% !important;
+    }
 }
 
 @media (min-width:576px) {
@@ -10992,7 +11002,22 @@ a:focus {
 #wrapper #content-wrapper {
     background-color: #f8f9fc;
     width: 100%;
-    overflow-x: hidden
+    overflow-x: hidden;
+    margin-left: 225px;
+    padding: 20px 5px;
+    margin-top: 70px;
+    transition: all .2s;
+}
+
+@media (max-width: 768px) {
+    #wrapper #content-wrapper {
+        margin-left: 0;
+        padding: 20px 5px;
+    }
+
+    .sidebar.toggled~#wrapper #content-wrapper {
+        margin-left: 0px;
+    }
 }
 
 #wrapper #content-wrapper #content {
@@ -11367,7 +11392,12 @@ a:focus {
 }
 
 .topbar {
-    height: 4.375rem
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 4.375rem;
+    z-index: 2;
 }
 
 .topbar #sidebarToggleTop {
@@ -11522,9 +11552,13 @@ a:focus {
 }
 
 .sidebar {
+    position: fixed;
+    left: 0;
+    top: 4.4rem;
     width: 6.5rem;
     min-height: 100vh;
     transition: .2s ease-in-out;
+    z-index: 1;
 }
 
 .sidebar .nav-item {
@@ -11642,6 +11676,7 @@ a:focus {
     transition: .2s ease-in-out;
 }
 
+
 .sidebar.toggled #sidebarToggle::after {
     content: '\f105';
     font-family: 'Font Awesome 5 Free';
@@ -11712,6 +11747,11 @@ a:focus {
 }
 
 @media (min-width:768px) {
+
+    .sidebar.toggled~#wrapper #content-wrapper {
+        margin-left: 105px;
+    }
+
     .sidebar {
         width: 14rem !important
     }
