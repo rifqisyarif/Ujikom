@@ -13,15 +13,22 @@
     <hr class="sidebar-divider my-0">
 
     <!-- Nav Item - Dashboard -->
-    <li class="nav-item active">
-        <a class="nav-link" href="{{ url('/dashboard') }}">
-            <img class="mr-2" src="{{ asset('img/Home.svg') }}" alt="">
+    <li class="nav-item">
+        <a class="{{ (request()->is('/dashboard')) ? 'nav-link active' : 'nav-link collapsed' }}"
+            href="{{ route('dashboard') }}">
+            <img class="" src="{{ asset('img/Home.svg') }}" alt="">
             <span>Asrama</span></a>
-        <a class="nav-link" href="index.html">
-            <img class="mr-2" src="{{ asset('img/User.svg') }}" alt="">
+    </li>
+    <li class="nav-item">
+        <a class="{{ (request()->is('/musyrif')) ? 'nav-link active' : 'nav-link collapsed' }}"
+            href="{{ route('musyrif') }}">
+            <img class="" src="{{ asset('img/user.svg') }}" alt="">
             <span>Musyrif</span></a>
-        <a class="nav-link" href="index.html">
-            <img class="mr-2" src="{{ asset('img/Calendar.svg') }}" alt="">
+    </li>
+    <li class="nav-item">
+        <a class="{{ (request()->is('/jadwalCuti')) ? 'nav-link active' : 'nav-link collapsed' }}"
+            href="{{ route('jadwalCuti') }}">
+            <img class="" src="{{ asset('img/Calendar.svg') }}" alt="">
             <span>Jadwal Cuti</span></a>
     </li>
 

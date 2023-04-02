@@ -15,37 +15,45 @@
                 <!-- Page Heading -->
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
                     <div class="text-wrapper">
-                        <h1 class="h4 mb-0 text-gray-800">Asrama Santri IDN</h1>
-                        <p class="text-muted mb-0 mt-1">List Asrama Santri IDN</p>
+                        <h1 class="h4 mb-0 text-gray-800">Cuti</h1>
+                        <p class="text-muted mb-0 mt-1">List Cuti IDN</p>
                     </div>
-                    <a href="/createAsrama" class="btn btn-primary">Data Baru <i
+                    <a href="/createCuti" class="btn btn-primary">New Cuti <i
                             class="fas fa-plus fa-sm text-white-50 ml-1"></i></a>
 
                 </div>
 
                 <!-- Content Row -->
+                <nav aria-label="...">
+                    <ul class="pagination">
+                        <li class="page-item active"><a class="page-link px-3" href="#">All</a></li>
+                        <li class="page-item" aria-current="page">
+                            <a class="page-link px-3" href="#">Pending</a>
+                        </li>
+                        <li class="page-item"><a class="page-link px-3" href="#">Approve</a></li>
+                        <li class="page-item">
+                            <a class="page-link px-3" href="#">Decline</a>
+                        </li>
+                    </ul>
+                </nav>
                 <div class="row">
 
                     <!-- Kamar Card -->
                     <div class="col-xl-4 col-md-6 mb-4 card-wrapper">
-                        <a style="text-decoration: none; color:black" href="/detailAsrama">
-                            <div class="card border-left-primary shadow h-100 py-2">
+                        <a style="text-decoration: none; color:black" href="{{ route('detailCuti')}}">
+                            <div class="card border-secondary shadow h-100 py-2">
                                 <div class="card-body p-3">
                                     <div class="d-flex no-gutters align-items-center justify-content-between">
-                                        <div class="d-flex align-items-center">
-                                            <div class="mr-4">
-                                                <img src="{{ asset('img/kasur.svg') }}" alt="">
-                                            </div>
+                                        <div class="">
                                             <div class="">
+                                                <p>Setengah Hari</p>
                                                 <p class="font-weight-bold text-black mb-1">
-                                                    Kamar 2.1</p>
+                                                    Kamis 18 Des, 2023</p>
                                                 <p class="fs-6">Ust. Abdullah Azka</p>
                                             </div>
                                         </div>
                                         <div class="text-center">
-                                            <p>
-                                                Total Santri</p>
-                                            <p class="fs-6"><b>18</b></p>
+                                            <button type="button" class="btn btn-success">Approve</button>
                                         </div>
                                     </div>
                                 </div>

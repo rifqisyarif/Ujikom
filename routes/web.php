@@ -11,8 +11,12 @@
 |
 */
 
+use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\dashboardController;
+use App\Http\Controllers\detailAsrama;
 use App\Http\Controllers\FormController;
+use App\Http\Controllers\jadwalCutiController;
+use App\Http\Controllers\musyrifController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -22,17 +26,28 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/dashboard', 'dashboardController@index')->name('dashboard');
+// Asrama
+Route::get('/dashboard', [dashboardController::class, 'index'])->name('dashboard');
+Route::get('/createAsrama', [dashboardController::class, 'createAsrama'])->name('createAsrama');
+Route::get('/detailAsrama', [dashboardController::class, 'detailAsrama'])->name('detailAsrama');
+Route::get('/createSantri', [dashboardController::class, 'createSantri'])->name('createSantri');
 
-Auth::routes();
+Route::post('/createAsrama', [dashboardController::class, 'store'])->name('/createAsrama');
 
-Route::get('/dashboard', 'HomeController@index')->name('dashboard');
+Route::get('/dashboard', [dashboardController::class, 'index'])->name('dashboard');
 
 // Form Submit
 Route::post('/submit-form', [FormController::class, 'submitForm']);
 
-// Create Asrama
-Route::get('/createAsrama', [dashboardController::class, 'createAsrama']);
+// Musyrif
+Route::get('/musyrif', [musyrifController::class, 'index'])->name('musyrif');
+Route::get('/detailMusyrif', [musyrifController::class, 'detailMusyrif'])->name('detailMusyrif');
+Route::get('/createMusyrif', [musyrifController::class, 'createMusyrif'])->name('createMusyrif');
+Route::post('/createMusyrif', [musyrifController::class, 'store'])->name('createMusyrif');
 
-// Detail Asrama
-Route::get('/detailAsrama', [dashboardController::class, 'detailAsrama']);
+// Jadwal Cuti
+Route::get('/jadwalCuti', [jadwalCutiController::class, 'index'])->name('jadwalCuti');
+Route::get('/createCuti', [jadwalCutiController::class, 'createCuti'])->name('createCuti');
+Route::get('/detailCuti', [jadwalCutiController::class, 'detailCuti'])->name('detailCuti');
+
+Auth::routes();
