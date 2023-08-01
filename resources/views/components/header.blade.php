@@ -8,7 +8,12 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+<<<<<<< Updated upstream
     <title>SB Admin 2 - Dashboard</title>
+=======
+    <title>Welcome Santri</title>
+    <link rel="icon" href="{{ asset('img/page_icon.png') }}">
+>>>>>>> Stashed changes
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <!-- Custom fonts for this template-->
@@ -38,4 +43,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600&display=swap"
         rel="stylesheet">
+<<<<<<< Updated upstream
+=======
+
+    {{-- Bootstrap Select --}}
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+
+    {{-- Loading Jquery --}}
+    <script src="
+https://cdn.jsdelivr.net/npm/gasparesganga-jquery-loading-overlay@2.1.7/dist/loadingoverlay.min.js
+"></script>
+>>>>>>> Stashed changes
 </head>

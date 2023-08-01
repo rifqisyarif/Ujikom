@@ -43,8 +43,63 @@
                         </div>
 
                         <div class="form-group row">
+<<<<<<< Updated upstream
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password')
                                 }}</label>
+=======
+<<<<<<< Updated upstream
+                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+=======
+                            <label for="tanggal_lahir" class="col-md-4 col-form-label text-md-right">Tanggal
+                                Lahir</label>
+
+                            <div class="col-md-6">
+                                <input id="email" type="name" class="form-control @error('email') is-invalid @enderror"
+                                    name="tanggal_lahir" value="{{ old('email') }}" required autocomplete="email">
+
+                                @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="tanggal_lahir" class="col-md-4 col-form-label text-md-right">Tempat
+                                Tinggal</label>
+
+                            <div class="col-md-6">
+                                <input id="email" type="name" class="form-control @error('email') is-invalid @enderror"
+                                    name="tempat_tinggal" value="{{ old('email') }}" required autocomplete="email">
+
+                                @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="tanggal_lahir" class="col-md-4 col-form-label text-md-right">No Telp</label>
+
+                            <div class="col-md-6">
+                                <input id="email" type="name" class="form-control @error('email') is-invalid @enderror"
+                                    name="no_telp" value="{{ old('email') }}" required autocomplete="email">
+
+                                @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password')
+                                }}</label>
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 
                             <div class="col-md-6">
                                 <input id="password" type="password"

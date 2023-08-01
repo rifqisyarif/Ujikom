@@ -20,6 +20,7 @@
                 {{-- Form --}}
                 <form class="d-flex flex-column gap-3" action="{{ route('createMusyrif') }}" method="POST">
                     @csrf
+<<<<<<< Updated upstream
                     <div class="card mt-4 col-xl-4 " style="width: 18rem;">
                         <div class="card-body pl-2">
                             <div class="detail1 d-flex align-items-center">
@@ -35,6 +36,12 @@
                         <div class="col-xl-6 mb-3">
                             <label for="formGroupExampleInput" class="form-label">Nama</label>
                             <input name="nama" type="text" class="form-control " id="nama" placeholder="Nama Santri">
+=======
+                    <div class="row">
+                        <div class="col-xl-6 mb-3">
+                            <label for="formGroupExampleInput" class="form-label">Nama</label>
+                            <input name="name" type="text" class="form-control " id="nama" placeholder="Nama Santri">
+>>>>>>> Stashed changes
                         </div>
                         <div class="col-xl-6 mb-3">
                             <label for="formGroupExampleInput2" class="form-label">Tanggal Lahir</label>

@@ -8,7 +8,17 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+<<<<<<< Updated upstream
     <title>SB Admin 2 - Dashboard</title>
+=======
+<<<<<<< Updated upstream
+        <!-- Outer Row -->
+        <div class="row justify-content-center">
+=======
+    <title>Welcome Santri</title>
+    <link rel="icon" href="{{ asset('img/page_icon.png') }}">
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <!-- Custom fonts for this template-->
@@ -184,6 +194,15 @@
                     </div>
                 </div>
             </div>
+<<<<<<< Updated upstream
+=======
+<<<<<<< Updated upstream
+        </div>
+    </div> --}}
+</div>
+@endsection
+=======
+>>>>>>> Stashed changes
         </div> --}}
     </div>
     <script>
@@ -229,7 +248,11 @@
             icon: "error",
             confirmButtonText: "OK"
             });
+<<<<<<< Updated upstream
             console.log(textStatus)
+=======
+            console.log(jqXHR)
+>>>>>>> Stashed changes
         }
         });
     }
@@ -258,4 +281,9 @@
     <script src="{{ asset('js/demo/chart-area-demo.js') }}"></script>
     <script src="{{ asset('js/demo/chart-pie-demo.js') }}"></script>
 
+<<<<<<< Updated upstream
 </body>
+=======
+</body>
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes

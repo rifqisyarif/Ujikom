@@ -22,18 +22,29 @@
                 </div>
 
                 {{-- Form --}}
+<<<<<<< Updated upstream
                 <form class="d-flex flex-column gap-3" action="{{ route('dashboard') }}">
+=======
+                <form class="d-flex flex-column gap-3 mb-3" action="{{ url("detailCuti/$cutiMusyrif->id") }}">
+>>>>>>> Stashed changes
                     <div class="card mt-4 col-xl-4 " style="width: 18rem;">
                         <div class="card-body pl-2">
                             <div class="detail1 d-flex align-items-center">
                                 <img class="mr-3" src="{{ asset('img/santri.svg') }}" alt="">
                                 <div class="text-detail">
+<<<<<<< Updated upstream
                                     <h6 class="card-title mb-0">M Rifqi Syarifuddin</h6>
                                     <p class="card-text">Kamar 2.1</p>
+=======
+                                    <h6 class="card-title mb-0">{{ $cutiMusyrif->musyrif }}</h6>
+                                    <p class="card-text">Dari: <b>{{ $cutiMusyrif->awal }}</b></p>
+                                    <p class="card-text">Sampai: <b>{{ $cutiMusyrif->akhir }}</b></p>
+>>>>>>> Stashed changes
                                 </div>
                             </div>
                         </div>
                     </div>
+<<<<<<< Updated upstream
                     <div class="row">
                         <div class="col-xl-6 mb-3">
                             <label for="formGroupExampleInput" class="form-label">Musyrif</label>
@@ -71,6 +82,26 @@
                     </div>
                 </form>
 
+=======
+                </form>
+                <div class="button-wrapper row gap-3">
+                    @if ($cutiMusyrif->status == 'Approved' || $cutiMusyrif->status == 'Declined')
+                    <form action="{{ url("detailCuti/$cutiMusyrif->id") }}" method='POST'>
+                        @csrf @method('DELETE')
+                        <button class="col-xl-3 col-md-6 mb-3 mb-3 btn btn-danger" type="submit">Delete</button>
+                    </form>
+                    @else
+                    <form action="{{ url("/decline-data/$cutiMusyrif->id") }}" method="POST">
+                        @csrf
+                        <button class="col-xl-3 col-md-6 mb-3 mb-3 btn btn-danger" type="submit">Tolak</button>
+                    </form>
+                    <form action="{{ url("/approve-data/$cutiMusyrif->id") }}" method="POST">
+                        @csrf
+                        <button class="col-xl-3 col-md-6 mb-3 mb-3 btn btn-success" type="submit">Approve</button>
+                    </form>
+                    @endif
+                </div>
+>>>>>>> Stashed changes
             </div>
             <!-- /.container-fluid -->
         </div>

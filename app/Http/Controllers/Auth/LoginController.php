@@ -46,7 +46,7 @@ class LoginController extends Controller
         $password = $request->input('password');
 
         // validate the form data
-        if (empty($name) || empty($password)) {
+        if (empty($email) || empty($password)) {
             // return an error response if the form data is invalid
             return response()->json([
                 'success' => false,

@@ -10,6 +10,13 @@ use Illuminate\Support\Facades\DB;
 
 class dashboardController extends Controller
 {
+    protected $user;
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         $data = DB::table('asramas')->paginate(5);

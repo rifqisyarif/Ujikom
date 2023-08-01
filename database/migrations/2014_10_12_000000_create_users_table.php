@@ -20,6 +20,13 @@ class CreateUsersTable extends Migration
             $table->string('tempat_tinggal');
             $table->integer('no_telp');
             $table->string('email');
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('tanggal_lahir');
+            $table->string('tempat_tinggal');
+            $table->integer('no_telp');
+            $table->string('email')->unique();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
