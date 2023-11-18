@@ -17,8 +17,8 @@ class MusyrifController extends Controller
      */
     public function index()
     {
-        $data = User::all();
-        return view('admin.musyrif.index', [
+        $data = DB::table('users')->get();
+        return view('admin.musyrif.dashboard', [
             'data' => $data
         ]);
     }

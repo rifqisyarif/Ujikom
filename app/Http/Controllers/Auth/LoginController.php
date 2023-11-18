@@ -29,6 +29,7 @@ class LoginController extends Controller
      */
     protected $redirectTo = RouteServiceProvider::HOME;
 
+
     /**
      * Create a new controller instance.
      *
@@ -39,29 +40,23 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    public function submitForm(Request $request)
-    {
-        // retrieve the form data
-        $email = $request->input('email');
-        $password = $request->input('password');
+    // public function submitForm(Request $request)
+    // {
+    //     // retrieve the form data
+    //     $email = $request->input('email');
+    //     $password = $request->input('password');
 
-        // validate the form data
-        if (empty($email) || empty($password)) {
-            // return an error response if the form data is invalid
-            return response()->json([
-                'success' => false,
-                'message' => 'Please fill out all form fields.'
-            ], 400);
-        }
-
-        // process the form data
-        // for example, you might save the data to a database or send an email
-        // ...
-
-        // return a success response if the form data is valid and has been processed successfully
-        return response()->json([
-            'success' => true,
-            'message' => 'Form submitted successfully!'
-        ], 200);
-    }
+    //     // validate the form data
+    //     if (auth()->attempt(array('email' => $email, 'password' => $password))) {
+    //         return response()->json([
+    //             'success' => true,
+    //             'message' => 'Form submitted successfully!'
+    //         ], 200);
+    //     } else {
+    //         return response()->json([
+    //             'success' => false,
+    //             'message' => 'Please fill out all form fields.'
+    //         ], 400);
+    //     }
+    // }
 }

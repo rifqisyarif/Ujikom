@@ -10951,6 +10951,7 @@ a.text-dark:focus {
 /* Custom */
 
 .card-wrapper:hover {
+  cursor: pointer;
   transition: .5s;
   opacity: .75;
 }

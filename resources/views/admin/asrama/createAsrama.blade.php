@@ -38,12 +38,11 @@
                 </div>
                 {{-- Form --}}
                 <div id="form-wrapper" class="row">
-                    <form class="d-flex flex-column gap-3" action="{{ url('/createAsrama') }}" method="POST">
+                    <form class="d-flex flex-column gap-3" action="{{ route('asrama.store') }}" method="POST">
                         @csrf
                         <div>
                             <label><b>Kamar</b></label>
                             <select name="asrama" class="form-select col-xl-4 col-md-7">
-                                <option selected><i class="fa-arrow-down"></i> Filter</option>
                                 <option>2.1</option>
                                 <option>2.2</option>
                                 <option>2.3</option>
@@ -56,10 +55,12 @@
                         <div>
                             <label><b>Musrif</b></label>
                             <select name="musyrif" class="form-select col-xl-4 col-md-7">
-                                <option selected>Abdullah Azka</option>
-                                <option selected>Abdullah Azka</option>
-                                <option selected>Abdullah Azka</option>
-                                <option selected>Abdullah Azka</option>
+                                @foreach ($musyrif as $item)
+                                @if ($item->name == 'admin')
+                                @continue
+                                @endif
+                                <option>Ust {{ $item->name }}</option>
+                                @endforeach
                             </select>
                         </div>
                         <button class="btn btn-primary w-25" type="submit">Create</button>

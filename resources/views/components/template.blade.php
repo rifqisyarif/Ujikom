@@ -1,18 +1,32 @@
 <!-- Header  -->
 @include('components.header')
 
-<!-- ======= Topbar ======= -->
-@include('components.topbar')
-
-<!-- ======= Sidebar ======= -->
-@include('components.sidebar')
-
 <!-- ======= Body ======= -->
 
 <body id="page-top">
-    <!-- Page Wrapper -->
-    @yield('content')
-    <!-- End of Page Wrapper -->
+    <div id="wrapper">
+        <!-- ======= Sidebar ======= -->
+        @include('components.sidebar')
+        <!-- End of Sidebar -->
+        <div id="content-wrapper" class="d-flex flex-column">
+            <div id="content">
+                <!-- ======= Topbar ======= -->
+                @include('components.topbar')
+                <!-- Page Wrapper -->
+                @yield('content')
+                <!-- End of Page Wrapper -->
+            </div>
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Your Website 2021</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+        </div>
+    </div>
 
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">

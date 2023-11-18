@@ -29,11 +29,11 @@ class jadwalCutiController extends Controller
         //     'musyrif' => ['required']
         // ]);
 
-        CutiMusyrif::create([
-            'musyrif' => $request->musyrif,
-            'awal' => $request->awal,
-            'akhir' => $request->akhir,
-        ]);
+        // CutiMusyrif::create([
+        //     'musyrif' => $request->musyrif,
+        //     'awal' => $request->awal,
+        //     'akhir' => $request->akhir,
+        // ]);
 
         return redirect('/cutiMusyrif');
     }
