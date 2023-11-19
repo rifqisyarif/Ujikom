@@ -51,6 +51,16 @@ class AsramaController extends Controller
     {
         $id = IdGenerator::generate(['table' => 'asramas', 'length' => 6, 'prefix' => date('y')]);
 
+        //if the asrama is already exist in the database
+        if (Asrama::where('asrama', $request)->exists()) {
+            //return 
+        }
+
+        $request->validate([
+            'asrama' => 'required|unique:asramas',
+            'musyrif' => 'required|unique:asramas',
+        ]);
+
         $data = new Asrama();
         $data->id = $id;
         $data->asrama = $request['asrama'];

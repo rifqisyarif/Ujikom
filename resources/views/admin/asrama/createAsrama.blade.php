@@ -10,7 +10,7 @@
 
             <!-- Begin Page Content -->
             <div class="container-fluid">
-                <a href="{{ url()->previous() }}" class="btn btn-primary mb-4"><i
+                <a href="{{ route('asrama.index') }}" class="btn btn-primary mb-4"><i
                         class="fas fa-arrow-left fa-sm text-white-50 ml-1"></i> Back</a>
 
                 <div class="row">
@@ -64,6 +64,15 @@
                             </select>
                         </div>
                         <button class="btn btn-primary w-25" type="submit">Create</button>
+                        @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                        @endif
                     </form>
                 </div>
 

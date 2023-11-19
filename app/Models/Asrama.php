@@ -14,7 +14,7 @@ class Asrama extends Model
         'id', 'asrama', 'musyrif'
     ];
 
-    protected $table = 'Asramas';
+    protected $table = 'asramas';
     protected $guarded = [];
 
     public function santris()
