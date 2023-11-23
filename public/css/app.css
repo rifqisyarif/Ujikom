@@ -10945,3 +10945,8 @@ a.text-dark:focus {
     border-color: #dee2e6;
   }
 }
+
+.nopadding {
+  padding: 0 !important;
+  margin: 0 !important;
+}

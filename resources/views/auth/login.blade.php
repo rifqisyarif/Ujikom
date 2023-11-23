@@ -114,7 +114,8 @@
                     url: "/login",
                     data: $(this).serialize(),
                     success: function (response) {
-                        console.log(response);
+                        console.log('test');
+                        console.log(response.success);
 
                         if (response.success === true) { // Check if response.success is a boolean
                             Swal.fire({

@@ -152,4 +152,71 @@ class AsramaController extends Controller
             'musyrif' => $musyrif,
         ]);
     }
+
+    public function searchSantri(Request $request, $noAsrama)
+    {
+        if ($request->ajax()) {
+            $output = '';
+            $query = $request->get('query');
+            if ($query != '') {
+                $data = DB::table('santris')
+                    ->where('nama', 'like', '%' . $query . '%')
+                    ->orWhere('asrama', 'like', '%' . $query . '%')
+                    ->get();
+            } else {
+                //validate the santri that has the same asrama with the asrama that is selected
+                $data = DB::table('santris')
+                    ->where('asrama', $noAsrama)
+                    ->get();
+            }
+
+            $total_row = $data->count();
+            if ($total_row > 0) {
+                $output .= `test`;
+                foreach ($data as $row) {
+                    # code...
+                    $output .= '
+                    <div class="mb-4 col-xl-4 nopadding card-wrapper ">
+                        <div class="card mt-4  p-0" style="width: 18rem;">
+                            <div class="card-body">
+                                <div class="detail1 d-flex align-items-center">
+                                    <img class="mr-3" src="' . asset('img/santri.svg') . '" alt="">
+                                    <div class="text-detail">
+                                        <h6 class="card-title mb-0">' . $row->nama . '</h6>
+                                        <p class="card-text">' . $row->asrama . '</p>
+                                    </div>
+                                </div>
+                                <hr style="border-top: 2px solid rgba(0, 0, 0, .5);" class="sidebar-divider">
+                                <div class="detail2 d-flex justify-content-between">
+                                    <div>
+                                        <h6 style="font-size: .9rem" class="card-title mb-0 d-flex ">Hari piket: <p
+                                                class="ml-2">' . $row->hari_piket . '</p>
+                                        </h6>
+                                        <h6 style="font-size: .9rem" class="card-title mb-0 d-flex ">Kelas: <p
+                                                class="ml-2">
+                                                12 RPL Karir</p>
+                                        </h6>
+                                    </div>
+                                    <div class="div">
+                                        <a style="font-size: .8rem" href="#" class="btn btn-primary btn-sm">Sudah
+                                            Datang</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    ';
+                }
+            } else {
+                $output .= `
+                <P>Data tidak ditemukan</P>
+                `;
+            }
+            $data = array(
+                'list_data' => $output,
+                'total_data' => $total_row,
+            );
+            echo json_encode($data);
+        }
+    }
 }

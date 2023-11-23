@@ -19,6 +19,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
+    if (Auth::check()) {
+        return redirect(route('asrama.index'));
+    }
     return view('auth.login');
 });
 
@@ -27,8 +30,10 @@ Auth::routes();
 Route::post('/login', [LoginController::class, 'login']);
 
 // Asrama
-Route::get('asrama/tambahAsrama', [AsramaController::class, 'tambahAsrama']);
 Route::resource('asrama', AsramaController::class);
+Route::get('dashboard', [AsramaController::class, 'index']);
+Route::get('asrama/tambahAsrama', [AsramaController::class, 'tambahAsrama']);
+Route::get('searchSantri/{noAsrama}', [AsramaController::class, 'searchSantri'])->name('searchSantri');
 
 
 
