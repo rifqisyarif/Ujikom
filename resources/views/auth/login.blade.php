@@ -127,7 +127,7 @@
                             })
                             .then(() => {
                                 // Redirect to the dashboard or any other desired page
-                                window.location.href = '/asrama'; // Replace with your desired URL
+                                window.location.href = '/dashboard'; // Replace with your desired URL
                             });
                         } else {
                             Swal.fire({
